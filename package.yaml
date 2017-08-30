@@ -1,0 +1,76 @@
+name: gds-example
+version: '0.1.0.0'
+category: Web
+author: Beau Lyddon
+maintainer: beau.lyddon@realkinetic.com
+copyright: 2017 Beau Lyddon
+license: BSD3
+github: lyddonb/gds-example
+extra-source-files:
+- README.md
+default-extensions:
+- DataKinds
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- MultiParamTypeClasses
+- OverloadedStrings
+- RankNTypes
+- ScopedTypeVariables
+library:
+  source-dirs: src
+  exposed-modules:
+  - Lib
+  - Example
+  dependencies:
+  - base >=4.7 && <5
+dependencies:
+- aeson
+- base16-bytestring
+- bytestring
+- cereal
+- cryptohash-sha256
+- either
+- errors
+- exceptions
+- fast-logger
+- gogol
+- gogol-core
+- gogol-datastore
+- hashable
+- http-conduit
+- lens
+- monad-control
+- monad-logger
+- mtl
+- resourcet
+- scientific
+- string-conversions
+- tagged
+- text
+- transformers
+- transformers-base
+- unordered-containers
+- vector
+executables:
+  gds-example-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - gds-example
+tests:
+  gds-example-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - gds-example

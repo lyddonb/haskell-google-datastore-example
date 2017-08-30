@@ -1,0 +1,181 @@
+-- This file has been generated from package.yaml by hpack version 0.15.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:                gds-example
+version:             0.1.0.0
+homepage:            https://github.com/lyddonb/gds-example#readme
+bug-reports:         https://github.com/lyddonb/gds-example/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Beau Lyddon
+maintainer:          beau.lyddon@realkinetic.com
+copyright:           2017 Beau Lyddon
+category:            Web
+build-type:          Simple
+cabal-version:       >= 1.10
+
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/lyddonb/gds-example
+
+library
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances FunctionalDependencies MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables
+  exposed-modules:
+      Lib
+      Example
+  other-modules:
+      Datastore
+      DB.Env
+      DB.Error
+      DB.Error.Types
+      DB.Error.Util
+      DB.Model.Convert
+      DB.Model.Convert.Entity
+      DB.Model.Convert.Identifier
+      DB.Model.Convert.Properties
+      DB.Model.Convert.Request
+      DB.Model.Convert.Request.Commit
+      DB.Model.Convert.Request.Lookup
+      DB.Model.Convert.Request.Query
+      DB.Model.Convert.Value
+      DB.Model.Convert.Value.EncodeAsKey
+      DB.Model.Convert.Value.Native
+      DB.Model.Types
+      DB.Model.Types.Entity
+      DB.Model.Types.Identifier
+      DB.Model.Types.KeyPath
+      DB.Model.Types.Query
+      DB.Model.Types.Request
+      DB.Model.Types.UUID
+      DB.Query
+      DB.Request
+      DB.Request.Commit
+      DB.Request.Lookup
+      DB.Request.Query
+      DB.Request.Send
+      DB.Tx.Safe
+      DB.Tx.Util
+      DB.Types
+      Example.Creation
+      Example.Interface
+      Example.Interface.Implementation.Datastore
+      Example.Interface.Spec
+      Example.Orphans
+      Example.Types
+      Example.Types.Task
+      LibPrelude
+      LibPrelude.Types
+      Paths_gds_example
+  build-depends:
+      aeson
+    , base16-bytestring
+    , bytestring
+    , cereal
+    , cryptohash-sha256
+    , either
+    , errors
+    , exceptions
+    , fast-logger
+    , gogol
+    , gogol-core
+    , gogol-datastore
+    , hashable
+    , http-conduit
+    , lens
+    , monad-control
+    , monad-logger
+    , mtl
+    , resourcet
+    , scientific
+    , string-conversions
+    , tagged
+    , text
+    , transformers
+    , transformers-base
+    , unordered-containers
+    , vector
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable gds-example-exe
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances FunctionalDependencies MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables
+  main-is: Main.hs
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base16-bytestring
+    , bytestring
+    , cereal
+    , cryptohash-sha256
+    , either
+    , errors
+    , exceptions
+    , fast-logger
+    , gogol
+    , gogol-core
+    , gogol-datastore
+    , hashable
+    , http-conduit
+    , lens
+    , monad-control
+    , monad-logger
+    , mtl
+    , resourcet
+    , scientific
+    , string-conversions
+    , tagged
+    , text
+    , transformers
+    , transformers-base
+    , unordered-containers
+    , vector
+    , base
+    , gds-example
+  default-language: Haskell2010
+
+test-suite gds-example-test
+  type: exitcode-stdio-1.0
+  hs-source-dirs:
+      test
+  default-extensions: DataKinds FlexibleContexts FlexibleInstances FunctionalDependencies MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables
+  main-is: Spec.hs
+  build-depends:
+      aeson
+    , base16-bytestring
+    , bytestring
+    , cereal
+    , cryptohash-sha256
+    , either
+    , errors
+    , exceptions
+    , fast-logger
+    , gogol
+    , gogol-core
+    , gogol-datastore
+    , hashable
+    , http-conduit
+    , lens
+    , monad-control
+    , monad-logger
+    , mtl
+    , resourcet
+    , scientific
+    , string-conversions
+    , tagged
+    , text
+    , transformers
+    , transformers-base
+    , unordered-containers
+    , vector
+    , base
+    , gds-example
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  default-language: Haskell2010
