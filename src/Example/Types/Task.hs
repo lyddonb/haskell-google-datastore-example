@@ -11,8 +11,8 @@ import qualified Data.Serialize as Bin
 
 
 data Task = Task
-    { content :: String
-    , task_id :: UUID
+    { task_id :: UUID
+    , content :: String
     } deriving (Show, Generic, ToJSON, FromJSON, Bin.Serialize)
 
 
